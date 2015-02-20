@@ -1,7 +1,7 @@
 Package.describe({
   name: 'lookback:body-class',
   version: '0.0.1',
-  summary: ''
+  summary: 'Automatically add classes for Iron Router templates and layouts for scoping with CSS.'
 });
 
 var where = 'client';

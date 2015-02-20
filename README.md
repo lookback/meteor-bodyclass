@@ -8,6 +8,8 @@ Having classes for templates and layouts are great (if not vital) for scoping wi
 
 ## Install
 
+`lookback:body-class` is available on [Atmosphere](https://atmospherejs.com/lookback/body-class):
+
     meteor add lookback:body-class
 
 ## Usage
