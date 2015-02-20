@@ -1,0 +1,7 @@
+dependencies:
+  override:
+    - curl https://install.meteor.com | /bin/sh
+
+test:
+  override:
+    - meteor --test
