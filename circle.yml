@@ -5,5 +5,5 @@ dependencies:
 test:
   override:
     - meteor --test:
-      pwd:
-        "test-app"
+        pwd:
+          "test-app"
