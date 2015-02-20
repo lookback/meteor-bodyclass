@@ -6,7 +6,7 @@ Having classes for templates and layouts are great (if not vital) for scoping wi
 
 ## Install
 
-  meteor add lookback:body-class
+    meteor add lookback:body-class
 
 ## Usage
 
