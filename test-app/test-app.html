@@ -1,0 +1,36 @@
+<head>
+  <title>test-app</title>
+</head>
+
+<body>
+
+</body>
+
+<template name="home">
+  <h2>Home route</h2>
+</template>
+
+<template name="subPage">
+  <h2>Another route</h2>
+</template>
+
+<template name="layout">
+  <h2>A layouted route</h2>
+</template>
+
+
+<template name="DefaultLayout">
+
+  <h1>Default layout</h1>
+
+  {{ > yield }}
+
+</template>
+
+<template name="SecondaryLayout">
+
+  <h1>Secondary layout</h1>
+
+  {{ > yield }}
+
+</template>
