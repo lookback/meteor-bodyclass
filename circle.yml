@@ -6,4 +6,4 @@ test:
   override:
     - meteor --test
       pwd:
-        "test-app"
+        test-app
