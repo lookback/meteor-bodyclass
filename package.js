@@ -10,7 +10,7 @@ Package.onUse(function(api) {
   api.versionsFrom('0.9.3');
 
   api.use(['coffeescript', 'check', 'underscore', 'jquery', 'tracker'], where);
-  api.use('iron:router', where, {weak: true});
+  api.use('iron:router@1.0.0', where, {weak: true});
 
   api.addFiles('lookback:body-class.coffee', where);
 
