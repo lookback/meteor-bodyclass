@@ -1,6 +1,6 @@
 routeClasses = ->
   ctrl = Router.current()
-  _.chain([ctrl.lookupOption('layoutTemplate'), ctrl.lookupTemplate()])
+  _.chain([ctrl._layout._template, ctrl.lookupTemplate()])
     .compact()
     .invoke('toLowerCase')
     .value()
@@ -50,9 +50,8 @@ BodyClass =
 if Package['iron:router']?
 
   Iron.Router.plugins.bodyClasses = (router, options) ->
-    router.onBeforeAction ->
+    router.onAfterAction ->
       BodyClass.run(options)
-      this.next()
     , options
 
     router.onStop ->
