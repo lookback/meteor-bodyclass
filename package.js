@@ -17,3 +17,13 @@ Package.onUse(function(api) {
 
   api.export('BodyClass', where);
 });
+
+Package.onTest(function(api) {
+  api.use([
+    'coffeescript',
+    'practicalmeteor:munit',
+    'lookback:body-class'
+  ], where);
+
+  api.addFiles('body-class-test.coffee', where);
+});
