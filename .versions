@@ -1,0 +1,10 @@
+base64@1.0.2
+check@1.0.4
+coffeescript@1.0.5
+ejson@1.0.5
+jquery@1.11.3
+json@1.0.2
+lookback:body-class@0.1.0
+meteor@1.1.4
+tracker@1.0.5
+underscore@1.0.2

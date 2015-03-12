@@ -13,7 +13,7 @@ Package.onUse(function(api) {
   api.use(['coffeescript', 'check', 'underscore', 'jquery', 'tracker'], where);
   api.use('iron:router@1.0.0', where, {weak: true});
 
-  api.addFiles('lookback:body-class.coffee', where);
+  api.addFiles('body-class.coffee', where);
 
   api.export('BodyClass', where);
 });
