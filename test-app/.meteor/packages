@@ -6,6 +6,7 @@
 
 meteor-platform
 velocity:html-reporter
+velocity:console-reporter
 sanjo:jasmine
 lookback:body-class
 iron:router

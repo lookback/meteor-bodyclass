@@ -61,6 +61,7 @@ tracker@1.0.5
 ui@1.0.5
 underscore@1.0.2
 url@1.0.3
+velocity:console-reporter@0.1.1
 velocity:core@0.4.5
 velocity:html-reporter@0.4.2
 velocity:meteor-stubs@1.0.0_2
