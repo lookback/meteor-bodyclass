@@ -20,7 +20,7 @@ BodyClass =
       return console.warn 'BodyClass: Argument to "add" must be an array, string or function!'
 
     if Match.test fn, Array
-      return fn.forEach(BodyClass.add.bind(BodyClass))
+      return fn.forEach(_.bind(BodyClass.add, BodyClass))
 
     if not Match.test fn, Function
       return Meteor.startup => $(@settings.element).addClass(fn)
