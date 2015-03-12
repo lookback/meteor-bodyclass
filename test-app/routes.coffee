@@ -11,3 +11,12 @@ Router.route 'layout',
 Router.route 'sec-layout',
   name: 'sec-layout'
   layoutTemplate: 'SecondaryLayout'
+
+Router.route 'changeLayout',
+  path: 'change'
+  template: 'sub'
+  layoutTemplate: 'DefaultLayout'
+
+  action: ->
+    this.layout 'SecondaryLayout'
+    this.render()

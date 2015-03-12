@@ -21,15 +21,22 @@ describe 'BodyClass', ->
         expect($('body')).not.toHaveClass 'home'
         done()
 
+    it 'adds the current template and layout name as a class', (done) ->
+      expect($('body')).toHaveClass 'home'
+
+      Router.go 'layout'
+      Tracker.afterFlush ->
+        expect($('body')).toHaveClass 'defaultlayout layout'
+        expect($('body')).not.toHaveClass 'home'
+        done()
+
   describe 'run', ->
 
     beforeEach ->
       $('body').removeClass()
 
-    beforeEach ->
-      Router.onBeforeAction ->
+      Router.onAfterAction ->
         BodyClass.run()
-        this.next()
 
     beforeEach (done) ->
       Router.go 'home'
