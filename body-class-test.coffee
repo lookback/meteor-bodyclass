@@ -10,6 +10,8 @@ describe 'BodyClass', ->
         'template'
       lookupOption: ->
         'layout'
+      _layout:
+        _template: 'layout'
 
   afterEach ->
     $('body, html').removeClass()
