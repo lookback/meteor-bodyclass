@@ -1,5 +1,6 @@
 routeClasses = ->
-  ctrl = Router.current()
+  ctrl = Tracker.nonreactive -> Router.current()
+
   _.chain([ctrl._layout._template, ctrl.lookupTemplate()])
     .compact()
     .invoke('toLowerCase')
