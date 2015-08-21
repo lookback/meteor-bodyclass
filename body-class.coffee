@@ -41,10 +41,14 @@ BodyClass =
 
     $(@settings.element).addClass(classes.join(' '))
 
+  remove: (className) ->
+    check className, String
+    $(@settings.element).removeClass(className)
+
   cleanup: ->
     routes = routeClasses()
     classes = @settings.classes.concat(routes)
-    $(@settings.element).removeClass(classes.join(' '))
+    BodyClass.remove(classes.join(' '))
 
 
 if Package['iron:router']?
