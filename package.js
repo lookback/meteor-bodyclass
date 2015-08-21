@@ -1,6 +1,6 @@
 Package.describe({
   name: 'lookback:body-class',
-  version: '0.2.0',
+  version: '0.3.0',
   git: 'https://github.com/lookback/meteor-bodyclass',
   summary: 'Automatically add classes for Iron Router templates and layouts for scoping with CSS.'
 });
