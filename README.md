@@ -2,7 +2,7 @@
 
 [![Circle CI](https://circleci.com/gh/lookback/meteor-bodyclass/tree/master.svg?style=svg)](https://circleci.com/gh/lookback/meteor-bodyclass/tree/master)
 
-This package automatically adds classes on the `body` element (default) for the names of the current Iron Router template and layout used. It also reactively updates a class name returned from a function.
+This package automatically adds classes on the `body` element (default) for the names of the current template and layout used. It also reactively updates a class name returned from a function.
 
 Having classes for templates and layouts are great (if not vital) for scoping with CSS and similar.
 
@@ -40,6 +40,8 @@ Session.set('state', 'bar');
 // => body.bar
 ```
 
+## Iron Router
+
 The `run` method adds the names of the current template and/or layout to the body, and `cleanup` removes them. Goes well with Iron Router's `onBeforeAction` and `onStop` hooks:
 
 ```js
@@ -71,6 +73,33 @@ This behavior is available as a nifty one-line-init Iron Router plugin:
 
 ```js
 Router.plugin('bodyClasses');
+```
+
+## Flow Router
+
+Triggers are automatically added for you, with:
+
+```js
+FlowRouter.triggers.enter([() => BodyClass.run()]);
+FlowRouter.triggers.exit([() => BodyClass.cleanup()]);
+```
+
+For Flow Router, we use the *route name* and potentially the layout name for a template. Like this:
+
+```js
+FlowRouter.route({
+  name: 'something',
+  layout: 'MyLayout'
+});
+```
+
+As of Flow Router 2.8.0, route groups also can specify options, and thus you can use the `layout` property there as well.
+
+```js
+FlowRouter.group({
+  name: 'webapp',
+  layout: 'WebAppLayout'
+});
 ```
 
 *Note that template and layout names are added in lower case.*
