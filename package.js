@@ -20,7 +20,7 @@ Package.onUse(function(api) {
 
   api.use([
     'iron:router@1.0.0',
-    'kadira:flow-router'
+    'kadira:flow-router@2.8.0'
   ], where, {weak: true});
 
   api.addFiles('body-class.js', where);
