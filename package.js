@@ -8,13 +8,19 @@ Package.describe({
 var where = 'client';
 
 Package.onUse(function(api) {
-  api.versionsFrom('0.9.3');
+  api.versionsFrom('1.2.0.2');
 
-  api.use(['coffeescript', 'check', 'underscore', 'jquery', 'tracker'], where);
+  api.use([
+    'ecmascript',
+    'check',
+    'underscore',
+    'jquery',
+    'tracker'
+  ], where);
+
   api.use('iron:router@1.0.0', where, {weak: true});
 
-  api.addFiles('body-class.coffee', where);
-
+  api.addFiles('body-class.js', where);
   api.export('BodyClass', where);
 });
 
