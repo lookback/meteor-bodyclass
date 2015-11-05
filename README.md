@@ -97,6 +97,9 @@ meteor --test
 
 ## Version history
 
+- `0.4.0`
+  - Add support for Flow Router.
+  - Needs Meteor 1.2.0.2.
 - `0.1.0` - Initial publish.
 
 ## Contributions
