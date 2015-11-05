@@ -4,7 +4,8 @@
     "strict": 0,
     "quotes": [2, "single"],
     "no-underscore-dangle": 0,
-    "curly": 0
+    "curly": 0,
+    "new-cap": 0
   },
 
   "env": {

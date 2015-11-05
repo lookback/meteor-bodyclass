@@ -1,6 +1,19 @@
+const FlowRouter = Package['kadira:flow-router'] ? Package['kadira:flow-router'].FlowRouter : false;
+
 const routeClasses = () => {
-  let ctrl = Router.current();
-  return _.chain([ctrl._layout._template, ctrl.lookupTemplate()])
+  let classes = [];
+
+  if(Package['iron:router']){
+    let ctrl = Router.current();
+    classes = [ctrl._layout._template, ctrl.lookupTemplate()];
+  }
+
+  if(Package['kadira:flow-router']) {
+    let route = FlowRouter.current().route;
+    classes = [route.name, route.options.layout || (route.group && route.group.options.layout)];
+  }
+
+  return _.chain(classes)
     .compact()
     .invoke('toLowerCase')
     .value();
@@ -73,4 +86,9 @@ if(Package['iron:router']) {
       BodyClass.cleanup();
     }, options);
   };
+}
+
+if(FlowRouter) {
+  FlowRouter.triggers.enter([() => BodyClass.run()]);
+  FlowRouter.triggers.exit([() => BodyClass.cleanup()]);
 }
