@@ -126,6 +126,8 @@ meteor --test
 
 ## Version history
 
+- `0.4.1`
+  - If current route has no layout, get group's, then try parent's, then default layout
 - `0.4.0`
   - Add support for Flow Router.
   - Needs Meteor 1.2.0.2.

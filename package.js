@@ -1,6 +1,6 @@
 Package.describe({
   name: 'lookback:body-class',
-  version: '0.4.0',
+  version: '0.4.1',
   git: 'https://github.com/lookback/meteor-bodyclass',
   summary: 'Automatically add classes for router templates and layouts for scoping with CSS.'
 });
