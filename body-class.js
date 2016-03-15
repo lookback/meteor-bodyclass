@@ -9,8 +9,17 @@ const routeClasses = () => {
   }
 
   if(Package['kadira:flow-router']) {
+    // Gets a route's layout OR its group's layout OR its group's parent's layout
+    // OR default layout in that order
+    function getRouteLayout(route) {
+      return route.options.layout
+        || route.group && route.group.options.layout
+        || route.group && route.group.parent && route.group.parent.options.layout
+        || FlowRouter.defaultLayout;
+    }
+
     let route = FlowRouter.current().route;
-    classes = [route.name, route.options.layout || (route.group && route.group.options.layout)];
+    classes = [route.name, getRouteLayout(route)];
   }
 
   return _.chain(classes)
